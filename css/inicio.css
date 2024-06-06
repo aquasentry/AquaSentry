@@ -33,8 +33,12 @@ header{
 }
 
 #imagem_header{
+    display: flex;
     margin-left: 115px;
     width: 70px;
+    align-items: center;
+    gap: 10px;
+    color: white;
 }
 
 nav{
@@ -69,27 +73,27 @@ nav ul li a:hover{
     width: 60px;
 }
 
-main{
+.tela-principal{
     display: flex;
     flex-direction: column;
     margin: 80px;
 
 }
 
-main h1{
+.tela-principal h1{
     font-size: 154px;
     letter-spacing: -0.04em;
     font-weight: 600;
 }
 
-main h2{
+.tela-principal h2{
     font-size: 175px;
     font-weight: 400;
     letter-spacing: 16px;
     margin-left: 20px;
 }
 
-main p{
+.tela-principal p{
     color: white;
     font-size: 36px;
     text-align: center;
