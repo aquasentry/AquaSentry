@@ -227,8 +227,37 @@
                 <hr>
             </div>
             <div class="container_final">
-                <p>O serviço da AquaSentry conta com uma gama de voluntários que poderão ajudar com doações. Faça a sua parte! Clique no botão abaixo.</p>
-                <a href="#">SAIBA MAIS</a>
+                <p>O serviço da AquaSentry conta com uma gama de voluntários que contribuem para um futuro mais azul. Junte-se a nós e venha fazer a diferença na saúde do nosso planeta!</p>
+            </div>
+
+            <form action="cadastro" method="get" id="formulario">
+                <div id="form-container">
+                    <h2>Inscreva-se</h2>
+                    <div id="contact-form">
+                        <!-- campo nome -->
+                        <label for="c-nome">Nome:</label> 
+                        <input type="text" name="nome" id="c-nome" placeholder="digite o seu nome">
+                        <br>
+    
+                        <!-- campo email -->
+                        <label for="c-email">E-mail:</label>
+                        <input type="email" name="email" id="c-email" required placeholder="digite o seu email">
+                        <br>
+    
+                        <!-- campo phone -->
+                        <label for="c-phone">Telefone:</label>
+                        <input type="tel" name="phone" id="c-phone" maxlength="11" required placeholder="digite o seu telefone">
+                        <br>
+                    </div>
+                </div>
+                
+                <!-- Botão enviar -->
+                <input type="submit" value="Enviar"  id="submit-btn">
+            </form> 
+
+            <div id="thank-you" style="display: none;">
+                <p>Parabéns pela sua inciativa! Agradecemos por se juntar a nós na jornada de um futuro mais azul.</p>
+                <p>Em instantes alguém da nossa equipe entrará em contato com você.</p>
             </div>
         </section>
     </main>
@@ -264,5 +293,39 @@
     </footer>
 
     <script src="./javascript/script.js"></script>
+
+    <script>
+        document.getElementById('submit-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita o comportamento padrão do botão de envio
+  
+    var name = document.getElementById('c-nome').value;
+    var email = document.getElementById('c-email').value;
+    var phone = document.getElementById('c-phone').value;
+    
+    // Validar os dados
+    if (!name || !email || !phone) {
+      alert("Por favor, preencha todos os campos.");
+      return;
+    }
+    
+    // Validar o formato do e-mail
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Por favor, insira um endereço de e-mail válido.");
+      return;
+    }
+    
+    // Validar o formato do número de telefone (formato brasileiro)
+    var phoneRegex = /^\(?\d{2}\)?[-.\s]?\d{5}[-.\s]?\d{4}$/;
+    if (!phoneRegex.test(phone)) {
+      alert("Por favor, insira um número de telefone válido no formato (XX) XXXXX-XXXX.");
+      return;
+    }
+  
+    // Esconder o formulário e mostrar a mensagem de agradecimento
+    document.getElementById('formulario').style.display = 'none';
+    document.getElementById('thank-you').style.display = 'block';
+  });
+    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// alert("Seja Bem-Vindo ao Site Oficial do AquaSentry! 😁")
+alert("Seja Bem-Vindo ao Site Oficial do AquaSentry! 😁")
 
 // SLIDESHOW SECTION 1
 let slideIndex = 1;
