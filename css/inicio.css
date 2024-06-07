@@ -35,13 +35,18 @@ body{
     align-items: center;
     gap: 50px;
     margin: 20px;
+
+    div a{
+        text-decoration: none;
+        color: white;
+    }
 }
 
-.box_menu{
+.box_menu a{
     transition: 0.4s;
 }
 
-.box_menu:hover{
+.box_menu a:hover{
     color: #031d22;
     cursor: pointer;
 }
